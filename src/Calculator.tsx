@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import './Calculator.css';
 
-function CalculatorPage(props) {
+function CalculatorPage() {
     return (
       <section className="content">
         <Calculator />
@@ -9,13 +9,20 @@ function CalculatorPage(props) {
     );
 }
 
-function numberWithSpaces(x) {
+function numberWithSpaces(x: number) {
     var parts = x.toString().split(".");
     parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, " ");
     return parts.join(".");
 }
 
-async function getMortgageCalculation(mortgageParameters) {
+interface MortgageParams {
+    loan: number,
+    years: number,
+    interest: number,
+    date: Date,
+}
+
+async function getMortgageCalculation(mortgageParameters : MortgageParams) {
     const payload = JSON.stringify({
         loan: mortgageParameters.loan,
         years: mortgageParameters.years,
@@ -41,7 +48,11 @@ async function getMortgageCalculation(mortgageParameters) {
     }
 }
 
-function PaymentSchedule(props) {
+interface PaymentData {
+    payments: Array<Record<string, number>>
+}
+
+function PaymentSchedule(props: PaymentData) {
     if (props.payments.length <= 0) {
         return(null);
     }
@@ -50,7 +61,7 @@ function PaymentSchedule(props) {
 
     content.push(
         <tr>
-            <th colspan="5">Платежи</th>
+            <th colSpan={5}>Платежи</th>
         </tr>
     );
 
@@ -88,7 +99,7 @@ function PaymentSchedule(props) {
     );
 }
 
-function Calculator(props) {
+function Calculator() {
     const [loan, setLoan] = useState(10**7);
     const [years, setYears] = useState(30);
     const [interest, setInterest] = useState(10.1);
@@ -98,7 +109,7 @@ function Calculator(props) {
     const [payments, setPayments] = useState([]);
     const [showingResults, setShowingResults] = useState(false);
 
-    const handleSubmit = async event => {
+    const handleSubmit = async (event: { preventDefault: () => void; }) => {
         event.preventDefault();
 
         const results = await getMortgageCalculation({
@@ -119,19 +130,19 @@ function Calculator(props) {
             <form className={showingResults ? "form-hidden" :"form-shown"} onSubmit={handleSubmit}>
                 <div className="input-group">
                     <label>Сумма займа</label>
-                    <input type="text" value={loan} onChange={e => setLoan(e.target.value)} />
+                    <input type="text" value={loan} onChange={e => setLoan(parseInt(e.target.value))} />
                 </div>
                 <div className="input-group">
                     <label>Срок кредита</label>
-                    <input type="text" value={years} onChange={e => setYears(e.target.value)} />
+                    <input type="text" value={years} onChange={e => setYears(parseInt(e.target.value))} />
                 </div>
                 <div className="input-group">
                     <label>Процентная ставка</label>
-                    <input type="text" value={interest} onChange={e => setInterest(e.target.value)} />
+                    <input type="text" value={interest} onChange={e => setInterest(parseInt(e.target.value))} />
                 </div>
                 <div className="input-group">
                     <label>Дата первого платежа</label>
-                    <input type="date" onChange={e => setDate(e.target.value)}/>
+                    <input type="date" onChange={e => setDate(new Date(e.target.value))}/>
                 </div>
                 <div className="action-group">
                     <button type="submit">Рассчитать</button>

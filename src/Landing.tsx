@@ -1,7 +1,6 @@
-import React from "react";
 import './Landing.css';
 
-function LandingPage(props) {
+function LandingPage() {
   return (
     <section className="landing">
       <p className="text-3xl">ВЕБ</p>
