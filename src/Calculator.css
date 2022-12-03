@@ -1,3 +1,28 @@
+@tailwind utilities;
+
+@layer utilities {
+  .scrollbar::-webkit-scrollbar {
+    width: 20px;
+    height: 20px;
+  }
+
+  .scrollbar::-webkit-scrollbar-track {
+    border-radius: 100vh;
+    @apply bg-gray text-primary;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+    background: #e0cbcb;
+    border-radius: 100vh;
+    @apply bg-accent text-primary;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb:hover {
+    @apply bg-accent text-primary;
+  }
+}
+
+
 .calculator {
     @apply bg-secondary text-xl;
     padding: 15px;

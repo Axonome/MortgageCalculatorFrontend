@@ -149,7 +149,7 @@ function Calculator() {
                 </div>
             </form>
         
-            <div className={"results text-xl " + (showingResults ? "results-shown" : "results-hidden")}>
+            <div className={"scrollbar results text-xl " + (showingResults ? "results-shown" : "results-hidden")}>
                 <p>Ежемесячные выплаты: {numberWithSpaces(monthPayment)}</p>
                 <p>Переплата: {numberWithSpaces(overpayment)}</p>
                 <PaymentSchedule payments={payments} /> 
