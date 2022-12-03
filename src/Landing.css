@@ -1,0 +1,33 @@
+.h-40-vmin {
+    height: 40vmin;
+  }
+  
+.h-20-vmin {
+  height: 20vmin;
+}
+
+.h-10-vmin {
+  height: 10vmin;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .rotation {
+    animation: Logo-rotation infinite 12s linear;
+  }
+}
+
+@keyframes Logo-rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.landing {
+  display: flex;
+  flex: 1 1 auto;
+  align-items: center;
+  justify-content: center;
+}
