@@ -15,14 +15,14 @@ function numberWithSpaces(x: number) {
     return parts.join(".");
 }
 
-interface MorgageParams {
+interface MortgageParams {
     loan: number,
     years: number,
     interest: number,
     date: Date,
 }
 
-async function getMortgageCalculation(mortgageParameters : MorgageParams) {
+async function getMortgageCalculation(mortgageParameters : MortgageParams) {
     const payload = JSON.stringify({
         loan: mortgageParameters.loan,
         years: mortgageParameters.years,
