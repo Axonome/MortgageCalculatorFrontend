@@ -34,9 +34,8 @@
   height: 100%;
 }
 
-.calculator .form-hidden {
-  height: 0%;
-  transition: all 1s;
+.calculator form {
+  overflow: hidden;
 }
   
 .calculator .input-group {
@@ -74,7 +73,6 @@
 .calculator .results {
   margin-top: 2rem;
   overflow: auto;
-  transition: all 1s;
 }
 
 .calculator .results table, th, td {
@@ -83,6 +81,7 @@
 
 .calculator .results th, td {
   padding: 0.5em;
+  overflow: hidden;
 }
 
 .calculator .results-hidden {
@@ -92,7 +91,34 @@
 }
 
 .calculator .results-shown {
-  height: 15em;
+  max-height: 0px;
   padding: 1em;
   border: 2px solid theme("colors.accent");
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .form-hidden {
+    animation: panel-hide 0.3s linear 0s 1 normal forwards;
+  }
+  .results-shown {
+    animation: results-show 0.3s linear 0s 1 normal forwards;
+  }
+}
+
+@keyframes panel-hide {
+  0% {
+    max-height: 500px;
+  }
+  100% {
+    max-height: 0px;
+  }
+}
+
+@keyframes results-show {
+  0% {
+    max-height: 0px;
+  }
+  100% {
+    max-height: 500px;
+  }
 }
