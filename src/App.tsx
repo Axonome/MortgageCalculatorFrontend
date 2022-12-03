@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import './App.css';
 
 import LandingPage from "./Landing";
@@ -9,7 +9,7 @@ const Pages = {
   Calculator: <CalculatorPage />
 };
 
-function App(props) {
+function App() {
   const [currentPage, setCurrentPage] = useState(Pages.Logo);
 
   return (
