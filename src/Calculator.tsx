@@ -66,7 +66,7 @@ function PaymentSchedule(props: PaymentData) {
     );
 
     content.push(
-        <tr>
+        <tr className="main-table-row">
             <th>Дата платежа</th>
             <th>Всего</th>
             <th>Долг</th>
