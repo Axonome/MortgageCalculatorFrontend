@@ -1,13 +1,37 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import LandingPage from './Components/Landing';
+import CalculatorPage from './Components/Calculator';
+import App from './Components/App';
+
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App/>,
+    children: [
+      {
+        path: "/",
+        element: <LandingPage />,
+      },
+      {
+        path: "/Calculator/",
+        element: <CalculatorPage />,
+      }
+    ]
+  },
+]);
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLDivElement);
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router = {router} />
   </React.StrictMode>
 );
 
