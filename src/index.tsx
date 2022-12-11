@@ -4,7 +4,7 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import LandingPage from './Components/Landing';
 import CalculatorPage from './Components/Calculator';
-import Navigation from './Navigation';
+import App from './Components/App';
 
 import {
   createBrowserRouter,
@@ -14,7 +14,7 @@ import {
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Navigation/>,
+    element: <App/>,
     children: [
       {
         path: "/",

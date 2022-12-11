@@ -5,7 +5,7 @@ import {
   Link
 } from "react-router-dom";
 
-function Navigation() {
+function App() {
 
   return (
     <div className="font-semibold min-h-screen bg-primary">
@@ -24,4 +24,4 @@ function Navigation() {
   );
 }
 
-export default Navigation;
+export default App;
