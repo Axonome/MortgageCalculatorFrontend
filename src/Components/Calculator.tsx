@@ -1,5 +1,6 @@
 import { useState } from "react";
 import './Calculator.css';
+import LoadingButton from "./LoadingButton";
 
 function CalculatorPage() {
     return (
@@ -108,9 +109,11 @@ function Calculator() {
     const [overpayment, setOverpayment] = useState(0.0);
     const [payments, setPayments] = useState([]);
     const [showingResults, setShowingResults] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
 
     const handleSubmit = async (event: { preventDefault: () => void; }) => {
         event.preventDefault();
+        setIsLoading(true);
 
         const results = await getMortgageCalculation({
             loan: loan,
@@ -123,6 +126,7 @@ function Calculator() {
         setOverpayment(results.overpayment);
         setPayments(results.payments);
         setShowingResults(true);
+        setIsLoading(false);
     };
 
     return (
@@ -145,7 +149,7 @@ function Calculator() {
                     <input type="date" onChange={e => setDate(new Date(e.target.value))}/>
                 </div>
                 <div className="action-group">
-                    <button type="submit">Рассчитать</button>
+                    {isLoading ? <LoadingButton message="Загрузка"/> : <button type="submit">Рассчитать</button>}
                 </div>
             </form>
         
