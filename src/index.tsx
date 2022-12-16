@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import LandingPage from './Components/Landing';
-import CalculatorPage from './Components/Calculator';
+import CalculatorPage from './Components/Calculator/Calculator';
 import App from './Components/App';
 
 import {
