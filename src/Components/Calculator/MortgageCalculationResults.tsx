@@ -28,44 +28,27 @@ function PaymentSchedule({ payments }: PaymentScheduleProps) {
         return(null);
     }
 
-    const content = [];
-
-    content.push(
-        <tr>
-            <th colSpan={5}>Платежи</th>
-        </tr>
-    );
-
-    content.push(
-        <tr className="main-table-row">
-            <th>Дата платежа</th>
-            <th>Всего</th>
-            <th>Долг</th>
-            <th>Проценты</th>
-            <th>Остаток долга</th>
-        </tr>
-    )
-
-    for (let i = 0; i < payments.length; ++i) {
-        let date = new Date(payments[i]["date"]).toLocaleDateString();
-        let total = numberWithSpaces(payments[i]["total"]);
-        let debt = numberWithSpaces(payments[i]["debt"]);
-        let interest = numberWithSpaces(payments[i]["interest"]);
-        let loan = numberWithSpaces(payments[i]["loan"]);
-
-        content.push(
-            <tr>
-                <td>{date}</td>
-                <td>{total}</td>
-                <td>{debt}</td>
-                <td>{interest}</td>
-                <td>{loan}</td>
-            </tr>
-        );
-    }
     return (
         <table>
-            {content}
+            <tr>
+                <th colSpan={5}>Платежи</th>
+            </tr>
+            <tr className="main-table-row">
+                <th>Дата платежа</th>
+                <th>Всего</th>
+                <th>Долг</th>
+                <th>Проценты</th>
+                <th>Остаток долга</th>
+            </tr>
+            {payments.map((entry): any => 
+                <tr>
+                    <td>{new Date(entry["date"]).toLocaleDateString()}</td>
+                    <td>{numberWithSpaces(entry["total"])}</td>
+                    <td>{numberWithSpaces(entry["debt"])}</td>
+                    <td>{numberWithSpaces(entry["interest"])}</td>
+                    <td>{numberWithSpaces(entry["loan"])}</td>
+                </tr>
+            )}
         </table>
     );
 }
