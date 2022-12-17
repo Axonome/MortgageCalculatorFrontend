@@ -4,6 +4,7 @@
   height: 100vh;
   width: 75vw;
   margin: auto;
+  align-items: center;
 }
 
 .header {
@@ -35,5 +36,7 @@
 }
 
 .main-content {
-  margin: 5% 20%;
+  padding-top: 100px;
+  width: 100%;
+  max-width: 1000px;
 }
