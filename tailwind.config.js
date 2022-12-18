@@ -5,12 +5,12 @@ module.exports = {
   ],
   theme: {
     colors: {
-      primary: "#F1F3Fb",
-      secondary: "#FFF",
-      accent: "#6658D3",
-      lightaccent: "#8597A3",
-      neutral: "#735400",
-      gray: "#EEE",
+      primary: "#F0F5FA",
+      secondary: "#95A2AD",
+      accent: "#555394",
+      lightaccent: "#ACABC7",
+      neutral: "#FFFFFF",
+      gray: "#3B3C3D",
     },
     extend: {},
   },

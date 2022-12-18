@@ -7,34 +7,6 @@
   align-items: center;
 }
 
-.header {
-  flex: 0 1 auto;
-}
-
-.header ul {
-  list-style-type: none;
-  margin: 0;
-  overflow: hidden;
-}
-
-.header li {
-  float: left;
-  margin: 0 2px;
-}
-
-.header li button {
-  display: block;
-  text-align: center;
-  padding: 7px 8px;
-  text-decoration: none;
-  border-radius: 4px;
-  @apply bg-secondary;
-}
-
-.header li button:hover {
-  @apply bg-accent text-primary;
-}
-
 .main-content {
   padding-top: 100px;
   width: 100%;
