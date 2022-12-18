@@ -25,9 +25,9 @@
 .calculator {
     @apply bg-primary text-xl;
     padding: 15px;
-    border-radius: 15px;
+    border-radius: 8px;
     height: 100%;
-    width: 450px;
+    width: 500px;
 }
 
 .calculator .form-shown {
@@ -46,7 +46,7 @@
 }
 
 .calculator .input-group label {
-  margin-bottom: 8px;
+  margin-bottom: 16px;
 }
 
 .calculator label {
@@ -58,9 +58,9 @@
 .calculator input {
   border-bottom: 2px solid theme("colors.accent");
   font-size: 1.125rem;
-  padding: .25rem 0;
   @apply bg-neutral;
-  width: 400px;
+  border-radius: 3px;
+  padding: 8px 8px;
 }
 
 .calculator .action-group {
@@ -69,7 +69,7 @@
 
 .calculator button {
   font-size: 1.25rem;
-  padding: 1em;
+  padding: 10px 20px; 
   font-weight: 700;
   border-radius: 6px;
   border: 0;
@@ -133,6 +133,7 @@
 
 .content .info {
   width: 450px;
+  padding-top: 32px;
 }
 
 .content .info h1 {

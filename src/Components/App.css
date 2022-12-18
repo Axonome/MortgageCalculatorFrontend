@@ -1,7 +1,6 @@
 .page {
   display: flex;
   flex-flow: column;
-  width: 75vw;
   margin: auto;
   align-items: center;
 }
@@ -10,4 +9,5 @@
   padding-top: 100px;
   width: 100%;
   max-width: 1000px;
+  width: 75vw;
 }

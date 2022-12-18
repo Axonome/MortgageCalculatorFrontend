@@ -5,7 +5,7 @@ function Navbar() {
     return (
         <div className="navbar">
             <nav>
-                <Link to="/"><button type="button" >Главная</button></Link>
+                <Link to="/"><img className="logo" src="/Axonome.png"/></Link>
                 <ul>
                     <li><Link to="Calculator/"><button type="button">Калькулятор</button></Link></li>
                     <li><Link to="Auth/"><button type="button">Войти</button></Link></li> 
