@@ -22,13 +22,13 @@
   }
 }
 
-
 .calculator {
     @apply bg-primary text-xl;
     padding: 15px;
     border-radius: 15px;
     height: 100%;
-  }
+    width: 450px;
+}
 
 .calculator .form-shown {
   height: 100%;
@@ -42,11 +42,11 @@
 .calculator .input-group {
   display: flex;
   flex-direction: column;
-  padding-top: 1.5rem;
+  padding-top: 32px;
 }
 
-.calculator input {
-  @apply bg-neutral;
+.calculator .input-group label {
+  margin-bottom: 8px;
 }
 
 .calculator label {
@@ -59,6 +59,8 @@
   border-bottom: 2px solid theme("colors.accent");
   font-size: 1.125rem;
   padding: .25rem 0;
+  @apply bg-neutral;
+  width: 400px;
 }
 
 .calculator .action-group {
@@ -68,7 +70,6 @@
 .calculator button {
   font-size: 1.25rem;
   padding: 1em;
-  width: 100%;
   font-weight: 700;
   border-radius: 6px;
   border: 0;
@@ -79,6 +80,7 @@
   margin-top: 2rem;
   overflow: auto;
   transition: all 1s;
+  margin: 0;
 }
 
 .calculator .results table {
@@ -122,4 +124,26 @@
   height: 15em;
   padding: 1em;
   border: 2px solid theme("colors.accent");
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.content .info {
+  width: 450px;
+}
+
+.content .info h1 {
+  font-size: xx-large;
+}
+
+.content .info2 {
+  margin-top: 32px;
+  font-size: large;
+}
+
+.content .info2 > span {
+  font-size: x-large;
 }

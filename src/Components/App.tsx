@@ -7,7 +7,7 @@ function App() {
   return (
     <div>
       {<Navbar/>}
-      <div className="font-semibold min-h-screen bg-neutral">
+      <div className="font-semibold bg-neutral">
         <div className="page">
           <div className="main-content">
             <Outlet/>
