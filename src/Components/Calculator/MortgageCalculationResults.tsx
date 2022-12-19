@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react';
 import './Calculator.css';
 
 type Payments = Array<Record<string, number>>;
@@ -54,8 +55,16 @@ function PaymentSchedule({ payments }: PaymentScheduleProps) {
 }
 
 export function MortgageCalculationResults({shouldShow, results}: MortgageCalculationResultsProps) {
+    const scrollRef = useRef<HTMLInputElement>(null);
+    useEffect(() => {
+        if (scrollRef.current && shouldShow) {
+            console.log("scrolled");
+            scrollRef.current.scrollIntoView({ behavior: 'smooth' });
+        }
+    }, [shouldShow])
+
     return (
-        <div className={"scrollbar results text-xl " + (shouldShow ? "results-shown" : "results-hidden")}>
+        <div ref={scrollRef} className={"scrollbar results text-xl " + (shouldShow ? "results-shown" : "results-hidden")}>
             <p>Ежемесячные выплаты: {numberWithSpaces(results.monthPayment)}</p>
             <p>Переплата: {numberWithSpaces(results.overpayment)}</p>
             <PaymentSchedule payments={results.payments} /> 
