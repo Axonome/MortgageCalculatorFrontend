@@ -31,16 +31,19 @@ function PaymentSchedule({ payments }: PaymentScheduleProps) {
 
     return (
         <table>
-            <tr>
-                <th colSpan={5}>Платежи</th>
-            </tr>
-            <tr className="main-table-row">
-                <th>Дата платежа</th>
-                <th>Всего</th>
-                <th>Долг</th>
-                <th>Проценты</th>
-                <th>Остаток долга</th>
-            </tr>
+            <thead>
+                <tr>
+                    <th colSpan={5}>Платежи</th>
+                </tr>
+                <tr className="main-table-row">
+                    <th>Дата платежа</th>
+                    <th>Всего</th>
+                    <th>Долг</th>
+                    <th>Проценты</th>
+                    <th>Остаток долга</th>
+                </tr>
+            </thead>
+            <tbody>
             {payments.map((entry): any => 
                 <tr>
                     <td>{new Date(entry["date"]).toLocaleDateString()}</td>
@@ -50,6 +53,7 @@ function PaymentSchedule({ payments }: PaymentScheduleProps) {
                     <td>{numberWithSpaces(entry["loan"])}</td>
                 </tr>
             )}
+            </tbody>
         </table>
     );
 }
