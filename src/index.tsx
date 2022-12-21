@@ -10,6 +10,7 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import LoginPage from './Components/Login/Login';
 
 const router = createBrowserRouter([
   {
@@ -23,8 +24,12 @@ const router = createBrowserRouter([
       {
         path: "/Calculator/",
         element: <CalculatorPage />,
-      }
+      },
     ]
+  },
+  {
+    path: "/Auth/",
+    element: <LoginPage />,
   },
 ]);
 
