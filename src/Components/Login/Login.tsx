@@ -1,4 +1,5 @@
 import { useNavigate} from "react-router-dom";
+import { FaLock, FaUser } from 'react-icons/fa';
 import "./Login.css";
 
 function LoginPage() {
@@ -13,12 +14,12 @@ function LoginPage() {
                 </div>
                 <div className="body">
                     <div className="input-group">
-                        <label>Логин</label>
-                        <input/>
+                        <FaUser className="text-accent" />
+                        <input id="username" placeholder="Имя пользователя"/>
                     </div>
                     <div className="input-group">
-                        <label>Пароль</label>
-                        <input type="password"/>
+                        <FaLock className="text-accent" />
+                        <input id="password" type="password" placeholder="Пароль"/>
                     </div>
                     <button id="login" type="submit">Войти</button>
                     <div className="strike">

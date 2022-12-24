@@ -45,13 +45,17 @@
 
 .input-group {
     display: flex;
-    flex-direction: column;
     margin-bottom: 16px;
+    align-items: center;
+    width: 100%;
 }
 
 .input-group input {
     height: 40px;
     border-radius: 8px;
+    width: 100%;
+    margin-left: 16px;
+    padding-left: 6px;
 }
 
 .login-page {
@@ -97,6 +101,10 @@
 }
 
 #register {
-    margin-top: 16px;
     @apply bg-primary text-gray;
+    margin-top: 16px;
+}
+
+#login {
+    margin-top: 32px;
 }
