@@ -58,7 +58,7 @@
     padding-left: 6px;
 }
 
-.login-page {
+.login-page, .register-page {
     display: flex;
     flex-wrap: wrap;    
     justify-content: center;

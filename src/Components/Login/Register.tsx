@@ -1,16 +1,16 @@
-import { Link, useNavigate} from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 import { FaLock, FaUser } from 'react-icons/fa';
 import "./Login.css";
 
-function LoginPage() {
+function RegisterPage() {
     const navigate = useNavigate();
 
     return (
-        <div className="login-page">
+        <div className="register-page">
             <div className="login-wrapper">
                 <div className="head">
                     <a onClick={() => navigate(-1)}>{"<"} Назад</a>
-                    <label>Войти</label>
+                    <label>Регистрация</label>
                 </div>
                 <div className="body">
                     <div className="input-group">
@@ -21,15 +21,15 @@ function LoginPage() {
                         <FaLock className="text-accent" />
                         <input id="password" type="password" placeholder="Пароль"/>
                     </div>
-                    <button id="login" type="submit">Войти</button>
-                    <div className="strike">
-                        <span>или</span>
+                    <div className="input-group">
+                        <FaLock className="text-accent" />
+                        <input id="second-password" type="password" placeholder="Повторите пароль"/>
                     </div>
-                    <button id="register"><Link to="/Register">Зарегистрироваться</Link></button>
+                    <button id="login" type="submit">Зарегистрироваься</button>
                 </div>
             </div>
         </div>
     );
 }
 
-export default LoginPage;
+export default RegisterPage;
