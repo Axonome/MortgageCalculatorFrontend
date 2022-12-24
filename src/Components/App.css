@@ -1,13 +1,6 @@
-.page {
-  display: flex;
-  flex-flow: column;
-  margin: auto;
-  align-items: center;
-}
-
-.main-content {
-  padding-top: 100px;
-  width: 100%;
-  max-width: 1000px;
+.page-content {
   width: 75vw;
+  margin: auto;
+  margin-top: 100px;
+  max-width: 1000px;
 }

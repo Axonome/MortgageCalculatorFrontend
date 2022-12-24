@@ -24,7 +24,7 @@ function CalculatorPage() {
     }
 
     return (
-        <>
+        <div className="calculator-page">
             <section className="content">
                 <div className="calculator">
                     <MortgageParametersForm isLoading={isLoading} isShowingResults={isShowingResults} sendForm={getResults}/>
@@ -37,7 +37,7 @@ function CalculatorPage() {
             <section className="result-section">
                 <MortgageCalculationResults shouldShow={ isShowingResults } results={ results }/>
             </section>
-      </>
+      </div>
     );
 }
 
