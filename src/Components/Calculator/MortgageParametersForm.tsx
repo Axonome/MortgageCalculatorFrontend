@@ -51,6 +51,10 @@ export function MortgageParametersForm({isLoading, isShowingResults, sendForm}: 
                 <label>Дата первого платежа</label>
                 <input type="date" onChange={e => { updateParameters({date: new Date(e.target.value)}) }}/>
             </div>
+            <div className="input-group extra-payments">
+                <div>Досрочные платежи:</div>
+                <div className="plus-button"></div>
+            </div>
             <div className="action-group">
                 {isLoading ? <LoadingButton message="Загрузка"/> : <button type="submit">Рассчитать</button>}
             </div>
