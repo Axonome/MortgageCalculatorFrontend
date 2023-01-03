@@ -55,7 +55,8 @@
   transition: .25s ease;
 }
 
-.calculator input {
+.calculator input,
+.calculator select {
   border-bottom: 2px solid theme("colors.accent");
   font-size: 1.125rem;
   @apply bg-neutral;
@@ -211,6 +212,6 @@
 }
 
 .calculator .extra-payment-form .extra-payment-input {
-  padding-top: 0px;
+  padding-top: 5px;
 }
 
