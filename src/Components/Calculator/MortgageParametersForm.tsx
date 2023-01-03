@@ -1,12 +1,14 @@
 import { useReducer } from "react";
 import './Calculator.css';
 import LoadingButton from "./LoadingButton";
+import { ExtraPayment, ExtraPaymentForm, ExtraPaymentType } from "./ExtraPayment";
 
 export interface MortgageParameters {
     loan: number,
     years: number,
     interest: number,
     date: Date,
+    extraPayments: ExtraPayment[],
 }
 
 interface MortgageParametersFormProps {
@@ -24,7 +26,8 @@ export function MortgageParametersForm({isLoading, isShowingResults, sendForm}: 
         loan: 10**7,
         years: 30,
         interest: 10.1,
-        date: new Date()
+        date: new Date(),
+        extraPayments: []
     };
     const [parameters, updateParameters] = useReducer(reducer, initialParameters);
 
@@ -51,10 +54,11 @@ export function MortgageParametersForm({isLoading, isShowingResults, sendForm}: 
                 <label>Дата первого платежа</label>
                 <input type="date" onChange={e => { updateParameters({date: new Date(e.target.value)}) }}/>
             </div>
-            <div className="input-group extra-payments">
+            <div className="input-group add-extra-payment">
                 <div>Досрочные платежи:</div>
-                <div className="plus-button"></div>
+                <div className="plus-button" onClick={e => { updateParameters({extraPayments: [...parameters.extraPayments, ({type: ExtraPaymentType.Single, amount: 0, date: new Date()})]}) }}></div>
             </div>
+            {parameters.extraPayments.map((item: ExtraPayment, i: number) => <ExtraPaymentForm callback={extraPayment => parameters.extraPayments[i] = extraPayment}/>)}
             <div className="action-group">
                 {isLoading ? <LoadingButton message="Загрузка"/> : <button type="submit">Рассчитать</button>}
             </div>

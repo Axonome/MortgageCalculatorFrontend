@@ -158,7 +158,7 @@
   font-size: x-large;
 }
 
-.calculator .extra-payments {
+.calculator .add-extra-payment {
   flex-direction: row;
   justify-content: space-between;
 }
@@ -171,6 +171,7 @@
 	width: 2.5em;
 	border-radius: 999px;
 	position: relative;
+  cursor: pointer;
 }
 
 .plus-button:after,
@@ -202,3 +203,14 @@
 .plus-button:hover {
   background-color: theme("colors.accent");
 }
+
+.calculator .extra-payment-form {
+  padding: 15px;
+  margin-top: 10px;
+  border: 1px solid theme("colors.accent");
+}
+
+.calculator .extra-payment-form .extra-payment-input {
+  padding-top: 0px;
+}
+
