@@ -6,7 +6,7 @@ export interface MortgageParameters {
     loan: number,
     years: number,
     interest: number,
-    date: Date,
+    date: number,
 }
 
 interface MortgageParametersFormProps {
@@ -24,7 +24,7 @@ export function MortgageParametersForm({isLoading, isShowingResults, sendForm}: 
         loan: 10**7,
         years: 30,
         interest: 10.1,
-        date: new Date()
+        date: 0
     };
     const [parameters, updateParameters] = useReducer(reducer, initialParameters);
 
@@ -49,7 +49,7 @@ export function MortgageParametersForm({isLoading, isShowingResults, sendForm}: 
             </div>
             <div className="input-group">
                 <label>Дата первого платежа</label>
-                <input type="date" onChange={e => { updateParameters({date: new Date(e.target.value)}) }}/>
+                <input type="date" onChange={e => { updateParameters({date: new Date(e.target.value).getTime()}) }}/>
             </div>
             <div className="action-group">
                 {isLoading ? <LoadingButton message="Загрузка"/> : <button type="submit">Рассчитать</button>}

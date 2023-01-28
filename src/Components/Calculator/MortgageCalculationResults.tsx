@@ -31,25 +31,29 @@ function PaymentSchedule({ payments }: PaymentScheduleProps) {
 
     return (
         <table>
-            <tr>
-                <th colSpan={5}>Платежи</th>
-            </tr>
-            <tr className="main-table-row">
-                <th>Дата платежа</th>
-                <th>Всего</th>
-                <th>Долг</th>
-                <th>Проценты</th>
-                <th>Остаток долга</th>
-            </tr>
-            {payments.map((entry): any => 
+            <thead>
                 <tr>
-                    <td>{new Date(entry["date"]).toLocaleDateString()}</td>
-                    <td>{numberWithSpaces(entry["total"])}</td>
-                    <td>{numberWithSpaces(entry["debt"])}</td>
-                    <td>{numberWithSpaces(entry["interest"])}</td>
-                    <td>{numberWithSpaces(entry["loan"])}</td>
+                    <th colSpan={5}>Платежи</th>
                 </tr>
-            )}
+                <tr className="main-table-row">
+                    <th>Дата платежа</th>
+                    <th>Всего</th>
+                    <th>Долг</th>
+                    <th>Проценты</th>
+                    <th>Остаток долга</th>
+                </tr>
+            </thead>
+            <tbody>
+                {payments.map((entry): any => 
+                    <tr>
+                        <td>{new Date(entry["date"]).toLocaleDateString()}</td>
+                        <td>{numberWithSpaces(entry["total"])}</td>
+                        <td>{numberWithSpaces(entry["debt"])}</td>
+                        <td>{numberWithSpaces(entry["interest"])}</td>
+                        <td>{numberWithSpaces(entry["loan"])}</td>
+                    </tr>
+                )}
+            </tbody>    
         </table>
     );
 }

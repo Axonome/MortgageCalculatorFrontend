@@ -44,7 +44,7 @@ function CalculatorPage() {
 async function getMortgageCalculation(parameters : MortgageParameters) {
     const payload = JSON.stringify(parameters);
     try {
-        let response = await fetch("http://localhost:9000/calculator/calculate", {
+        let response = await fetch("http://localhost:9000/calculate", {
             method: "POST",
                 headers: new Headers({
                     'Accept': 'application/json',
@@ -53,7 +53,7 @@ async function getMortgageCalculation(parameters : MortgageParameters) {
                 body: payload,
         });
 
-        const json = JSON.parse(await response.json());
+        const json = await response.json();
         console.log(json);
         const results: MortgageCalculationResultsData = {
             monthPayment: json.monthPayment,
